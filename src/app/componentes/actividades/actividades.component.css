@@ -1,0 +1,128 @@
+a {
+    font-style: italic;
+    color: #1d1936;
+}
+
+.container {
+    margin-top: 150px;
+    padding: 0px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+hr {
+    border: 0.5px solid #B8C5CE;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Merienda', cursive;
+}
+
+.container {
+    padding-bottom: 50px;
+}
+
+.pading {
+    margin-bottom: 100px!important;
+}
+
+.firma-card {
+    border: 1px solid #4F6E85;
+    margin: 1rem auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+    margin-bottom: 1.6%;
+    overflow: hidden;
+}
+
+.firma-resim {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+}
+
+.comercio {
+    color: black!important;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.entrada {
+    font-size: 14px;
+    padding-bottom: 0px;
+    font-family: "Josefin Sans";
+    text-align: justify;
+}
+
+h2 span {
+    color: #4F6E85!important;
+}
+
+ul {
+    list-style: none;
+}
+
+.encabezado {
+    color: #4F6E85!important;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.pie a {
+    color: #4F6E85!important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pie a:hover {
+    font-size: 16px;
+    color: #4F6E85;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+@media (max-width: 416px) {
+    .firma-logo {
+        width: calc(33.66667% - .75rem);
+        height: 6.5rem;
+        margin: 5px .375rem;
+    }
+    .firma-resim {
+        position: relative;
+        z-index: 0;
+        height: 200px;
+    }
+    .img-padding-no {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    span {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width:1024px) {
+    .entrada {
+        font-size: 12px;
+    }
+    h4 {
+        font-size: 18px!important;
+    }
+    h2,
+    .container {
+        margin-top: 120px;
+    }
+}

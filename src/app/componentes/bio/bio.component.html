@@ -1,0 +1,19 @@
+<app-navbar>
+</app-navbar>
+
+
+<div class="row" *ngIf="usuario.img && usuario.bio">
+    <div class="lg-12">
+        <div class="sidebar-box">
+            <div class="bio text-center">
+                <img src="{{url_firebase}}{{usuario.img}}{{url_firebase2}}?" alt="imagen admin" class="img-fluid">
+                <div class="bio-body">
+                    <h2>Eva Ortiz</h2>
+                    <p>{{usuario.bio}}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

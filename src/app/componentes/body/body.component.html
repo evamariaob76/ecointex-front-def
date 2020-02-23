@@ -1,0 +1,75 @@
+<div class="container-fluid wrapper">
+    <div class="row justify-content-center ">
+
+        <div class="col-md-6 mb-6 col-sm-6 col-xs-12 col-12 hijo" *ngFor="let comercio of comercios; let i=index ">
+
+            <div class="row columna" *ngIf="i<indice ">
+                <div class="col-md-12 mb-6 col-sm-6 col-xs-12 col-12 hijo">
+
+                    <div class="card sombras" (mouseover)="sombreado()" style="width: 18rem;" *ngIf="comercio.img ">
+                        <img class="img-fluid" src="{{url_firebase}}{{comercio.img}}{{url_firebase2}}" alt={{comercio.img}}>
+                        <div class="card-body ">
+                            <h5 class="card-title">{{comercio.nombre}}</h5>
+
+                            <p class="card-text capitalice"><small class="text-muted">{{comercio.actividad}}- {{comercio.createAt | date: 'mediumDate'}}</small></p>
+                            <p class="card-text entrada">{{comercio.resumen}}</p>
+
+                        </div>
+
+                        <div class="card-footer social" (click)="corazones();">
+                            <div class="row social">
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 ">
+                                    <a href='{{comercio.facebook}}' class="thumbnail ">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+
+                                    <a href="javascript:void(0);" (click)="addLike(comercio.id);">
+                                        <i id="heart" class="fas fa-heart "></i>{{comercio.likes}}
+
+                                    </a>
+
+
+                                    <a [routerLink]="[ '/comercios', comercio.id]" fragment='comments' class="thumbnail ">
+                                        <i class="far fa-comment"></i>{{comercio.comentarios.length}}
+
+                                    </a>
+
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 pie"> <a [routerLink]="[ '/comercios', comercio.id] "> ver más...</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12 text-center col">
+
+            <button *ngIf="indice<indiceMax " (click)="masEntradas( ) " type="button ">
+    cargar más entradas</button>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center col">
+
+
+            <button *ngIf="indice>6" (click)="menosEntradas( ) " type="button ">
+                    cargar menos entradas</button>
+        </div>
+
+    </div>
+</div>

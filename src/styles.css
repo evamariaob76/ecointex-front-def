@@ -1,0 +1,22 @@
+body {
+    background: url(./assets/fotos/burbuja.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    position: relative;
+    margin: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/**,
+*::before,
+*::after {
+    box-sizing: inherit!important;
+}*/

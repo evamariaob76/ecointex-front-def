@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div class="row actualizaciones">
+        <div class="col-lg-12 suscribirse">
+            ¿Quieres que te informemos de las actualizaciones?
+            <p><a [routerLink]="['/clientes/form']">¡Suscríbete!</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 ">
+            <div class=" titulo">
+                Que hacer...
+            </div>
+            <div class="row comercios">
+                <div class="col-lg-12 ">
+                    <div class="row menuDinamico" *ngFor="let comercio of me; let i=index">
+                        <div class="col lg-6 " *ngIf="i<4 ">
+                            <img src="{{url_firebase}}{{comercio.img}}{{url_firebase2}}" class="card-img-top " alt="... ">
+                        </div>
+                        <div class="col lg-6 menu">
+                            <div>
+                                <button *ngIf="i<4 " (click)="verFecha(mes[i]) " type="button " class="btn btn-outline-dark ">en  {{comercio.createAt| date: 'MMMM'}} ...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

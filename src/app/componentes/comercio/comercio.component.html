@@ -1,0 +1,84 @@
+<div class="container-fluid  wrapper">
+    <div class="row fotoPrincipal">
+        <div class="col-lg-12 col-md-12 mb-12 col-sm-12 col-xs-12 col-12 name ">
+            <h2 class="mb-4 ">{{comercio.nombre}}</h2>
+        </div>
+        <div class="row social ">
+            <div class="col-lg-10 col-md-10 mb-10 col-sm-12 col-xs-10 col-10 cabecera">
+                <ul>
+                    <li>
+                        <div class=" bio text-muted imagenAdmin"><img src="{{url_firebase}}{{usuario.img}}{{url_firebase2}}" alt="Imgen Admin">
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <small id="ver  text-muted ">Eva Ortiz </small>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <small class=" text-muted ">{{comercio.createAt | date: 'mediumDate'}}</small>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <a href='{{comercio.facebook}}' class=" thumbnail ">
+                            <i class="fab fa-facebook-f "></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <span>
+                            <a (click)="corazones()" class="like" class="mouse" (click)="corazones()"
+                                href="javascript:void(0);" (click)="addLike(comercio.id);">
+
+                                <small><span class="corazon">&#10084;</span> <span>{{comercio.likes}}</span></small>
+                        </a>
+                        </span>
+                    </li>
+                    <li>
+                        <a [routerLink]="[ '/comercios', comercio.id] " class="thumbnail ">
+                            <small class="length"><i class="far fa-comment "></i>{{comentariolength}}</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 mb-2 col-sm-2 col-xs-2 col-2 editar">
+                <div class="editar" *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">
+                    <button [routerLink]="['/editar', comercio.id]" class="btn btn-rounded boton cabecera"> Editar
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="row ">
+                <div class="col-lg-12 ">
+
+                    <div class="post-content-body ">
+                        <p class="resumen">{{comercio.parrafoOne}}</p>
+                        <div class="row mb-12  col-sm-12 col-xs-12  col-12 imagenes" *ngIf="comercio.img && comercio.img1 && comercio.img2">
+                            <div class="col-md-12 col-lg-12 mb-4  col-sm-12 col-xs-12  col-12">
+                                <img src="{{url_firebase}}{{comercio.img}}{{url_firebase2}}" class="card-img-top rounded mx-auto d-block" alt="imagen comercio ">
+                            </div>
+                            <div class="col-md-12 mb-4 col-lg-6 col-sm-12 col-xs-12  col-12">
+                                <img src="{{url_firebase}}{{comercio.img1}}{{url_firebase2}}" class="card-img-top rounded mx-auto d-block" alt="imagen comercio  ">
+                            </div>
+                            <div class="col-md-12 mb-4 col-lg-6 col-sm-12 col-xs-12  col-12 ">
+                                <img src="{{url_firebase}}{{comercio.img2}}{{url_firebase2}}" class="card-img-top rounded mx-auto d-block" alt="imagen comercio  ">
+                            </div>
+                        </div>
+                        <p>{{comercio.parrafoTwo}}</p>
+                        <div class="card-footer social ">
+
+                            <button type="button " (click)="comoLlegar(); " class="btn btn-rounded boton " style="width:100%;margin: auto; font-size: 15px ">Como llegar ...</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

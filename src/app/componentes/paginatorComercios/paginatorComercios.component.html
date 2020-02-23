@@ -1,0 +1,18 @@
+<nav>
+    <ul *ngIf="paginas?.length>0 " class="pagination">
+
+        <li class="page-item " *ngIf="paginadorComercios.number>0 ">
+            <a class="page-link " [routerLink]="[ '/comercios/page',paginadorComercios.number-1] ">&laquo;</a>
+
+        </li>
+        <li class="page-item" *ngFor="let pagina of paginas" [ngClass]="pagina-1==paginadorComercios.number?'disabled':''">
+            <span class="page-link text-info " *ngIf="pagina-1==paginadorComercios.number">{{pagina}}</span>
+            <a class="page-link " *ngIf=" pagina-1!=paginadorComercios.number " [routerLink]="[ '/comercios/page',pagina-1] ">{{pagina}}</a>
+        </li>
+        <li class="page-item " *ngIf="paginadorComercios.number<paginadorComercios.totalPages-1 ">
+            <a class="page-link " [routerLink]="[ '/comercios/page',paginadorComercios.number+1] ">&raquo;</a>
+
+        </li>
+
+    </ul>
+</nav>

@@ -1,0 +1,129 @@
+    .boton {
+        background: #00004d;
+        color: white
+    }
+    
+    .boton:hover {
+        color: white;
+        background: #38688B;
+    }
+    
+    .row {
+        background: white;
+        padding-bottom: 50px;
+    }
+    
+    .bordes {
+        border: 1px solid #1d1936;
+    }
+    
+    a {
+        color: #00004d;
+        font-style: italic;
+    }
+    
+    th,
+    td {
+        text-align: center;
+    }
+    
+    .cabecera {
+        color: #1d1936;
+    }
+    
+    @media (min-width:411px) and (max-width:414px) {
+        * {
+            font-size: 9px;
+        }
+        #ocultar {
+            display: none;
+        }
+        .table-striped {
+            width: 200px;
+        }
+        button {
+            font-size: 10px;
+            padding: 0px;
+        }
+        .card-body {
+            padding: 4px;
+        }
+        .row {
+            padding-top: 30px;
+        }
+    }
+    
+    @media (max-width:375px) {
+        * {
+            font-size: 9px;
+        }
+        #ocultar {
+            display: none;
+        }
+        .table-striped {
+            width: 200px;
+        }
+        button {
+            font-size: 9px;
+            padding: 0px;
+        }
+        th,
+        td {
+            padding: 8px!important;
+        }
+        .card-body {
+            padding: 12px;
+        }
+        .row {
+            padding-top: 30px;
+        }
+    }
+    
+    @media (max-width:320px) {
+        * {
+            font-size: 8px;
+        }
+        #ocultar {
+            display: none;
+        }
+        .table-striped {
+            width: 200px;
+        }
+        button {
+            font-size: 10px;
+            padding: 0px;
+        }
+        th,
+        td {
+            padding: 5px!important;
+        }
+        .card-body {
+            padding: 10px;
+        }
+        .row {
+            padding-top: 30px;
+        }
+    }
+    
+    @media (width:1024px) {
+        th,
+        td {
+            padding: 4px!important;
+        }
+        .row {
+            padding-top: 150px!important;
+        }
+        .contenedor {
+            margin: 0px;
+        }
+    }
+    
+    @media (width:768px) {
+        th,
+        td {
+            padding: 4px!important;
+        }
+        .row {
+            padding-top: 0px!important;
+        }
+    }

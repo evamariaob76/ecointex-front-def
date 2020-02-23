@@ -1,0 +1,155 @@
+<div class="row   bg-light ">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <h2 class="center-block">Actualice los datos que quiera cambiar:
+
+            <p id="usuario">{{usuario.nombre}} {{usuario.apellido}}</p>
+
+        </h2>
+    </div>
+</div>
+<div class="row bg-light">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <form class="p-5 " #AdminForm="ngForm">
+
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre </label>
+                        <input type="text" class="form-control" #nombre="ngModel" id="nombre" required [(ngModel)]="usuario.nombre" name="nombre" minlength="3">
+                        <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                            <div *ngIf="nombre.errors.required ">
+                                Nombre es requerido
+                            </div>
+
+                            <div *ngIf="nombre.errors.minlength ">
+                                Nombre debe tener al menos 3 caracteres
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido </label>
+                        <input type="text" class="form-control" #apellido="ngModel" id="apellido" required [(ngModel)]="usuario.apellido" name="apellido" minlength="3">
+                        <div class="alert alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                            <div *ngIf="apellido.errors.required ">
+                                Apellido es requerido
+                            </div>
+
+                            <div *ngIf="apellido.errors.minlength ">
+                                Apellido debe tener al menos 3 caracteres
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <small>(debe ser de gmail)</small> </label>
+                        <input pattern="(\W|^)[\w.\-]{0,25}@(gmail)(\.com|.es)(\W|$)" type="email" required class="form-control" #email="ngModel" id="apellido" [(ngModel)]="usuario.email" name="email">
+                        <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <div *ngIf="email.errors.required ">
+                                Email es requerido
+                            </div>
+                            <div *ngIf="email.errors ">
+                                Email con formato incorrecto
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Resumen Biografía  </label> (max 400 caracteres)
+                        <textarea cols="40" rows="7" type="descripcion" maxlength="570" minlength="100" class="form-control" #descripcion="ngModel" id="descripcion" [(ngModel)]="usuario.descripcion" name="descripcion" required></textarea>
+                        <div class="alert alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+                            <div *ngIf="descripcion.errors.required ">
+                                Resumen es requerido
+                            </div>
+                            <div *ngIf="descripcion.errors.minlength ">
+                                Resumen debe tener al menos de 100 caracteres
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Biografía </label>
+                        <textarea cols="40" rows="20" type="descripcion" minlength="50" class="form-control" #bio="ngModel" id="bio" required [(ngModel)]="usuario.bio" name="bio"></textarea>
+
+                        <div class="alert alert-danger" *ngIf="bio.invalid && (descripcion.dirty || bio.touched)">
+                            <div *ngIf="bio.errors.required ">
+                                La Biografía es requerida
+                            </div>
+                            <div *ngIf="bio.errors.minlength ">
+                                La Biografía debe tener al menos de 50 caracteres
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-6 personal">
+                    <div class="row  ">
+                        <div class="col-lg-12 col-md-12  col-12 my-auto container-logo">
+                            <img style="max-width: 500px" src="{{url_firebase}}{{usuario.img}}{{url_firebase2}}">
+                        </div>
+
+                    </div>
+                    <div class="row   botonImg">
+                        <div class=" col-lg-12  col-md-12 col-sm-12 col-12 my-auto  text-center container-logo ">
+                            <div class="form-group">
+
+                                <label [ngClass]="{'estadoTrue':estadoPositivo1,'estadoFalse':!estadoPositivo1}" for="img">Foto PERSONAL </label>
+
+                                <input class="seleccionar" (change)="seleccionarFoto($event) " type="file" id="img">
+                                <div class="imagen" [innerHTML]="htmlStr"></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="row portada">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 my-auto container-logo">
+                            <div class="row  ">
+                                <div class=" col-lg-12 ">
+                                    <img style="max-width: 500px" src="{{url_firebase}}{{usuario.fotoPortada}}{{url_firebase2}}">
+                                </div>
+
+                            </div>
+                            <div class="row   botonImg">
+                                <div class=" col-lg-12 col-md-12 col-sm-12  col-12 my-auto  text-center container-logo ">
+
+                                    <div class="form-group">
+
+                                        <label [ngClass]="{'estadoTrue':estadoPositivo2,'estadoFalse':!estadoPositivo2}" for="img1">Foto
+                                                    PORTADA </label>
+                                        <div class="imagen" [innerHTML]="htmlStr1"></div>
+
+                                        <p>* La imagen debe de tener tamaño de resolución de pantalla </p>
+                                        <p><span>(Imágenes Wallpaper: 1920px x 1082px)</span></p>
+                                        <input class="seleccionar" (change)="seleccionarFotoPortada($event) " type="file" id="img1">
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<div class="row bg-light actualizar">
+    <div class="col-lg-12 col-md-12  col-12 text-center ">
+        <h5 class="">Pulse actualizar datos para grabar los cambios:
+        </h5>
+        <button [disabled]="!AdminForm.valid" [ngClass]="{'boton': AdminForm.valid}" class="btn btn-rounded center-block botonDisabled" type="button" role="button" (click)="updateUsuario()">Actualizar datos</button>
+    </div>
+
+
+</div>

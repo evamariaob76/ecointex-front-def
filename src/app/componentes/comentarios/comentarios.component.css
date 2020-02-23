@@ -1,0 +1,626 @@
+* {
+    font-family: 'Amaranth', sans-serif;
+}
+
+.botonDisabled {
+    background: #00004d;
+}
+
+.boton {
+    background: #00004d;
+    color: white
+}
+
+.boton:hover {
+    color: white;
+    background: #38688B;
+}
+
+.formulario {
+    border: 1px solid #4F6E85;
+}
+
+input {
+    height: 30px;
+}
+
+label {
+    font-size: 12px;
+}
+
+.botones {
+    margin-left: 50px;
+}
+
+.comment-list .children {
+    margin: 0;
+    float: left;
+    width: 100%;
+}
+
+.comment-list li {
+    padding: 0;
+    float: left;
+    width: 100%;
+    clear: both;
+    list-style: none;
+}
+
+.comment-list li .vcard {
+    width: 80px;
+    float: left;
+}
+
+.comment-list li .vcard img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.comment-list li .comment-body {
+    float: right;
+    width: 600px;
+}
+
+h3,
+hr {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 50px;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.comment-list li .comment-body .meta {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: #ccc;
+}
+
+.comment-list li .comment-body .reply {
+    background: #e6e6e6;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.admin {
+    margin-left: 100px;
+}
+
+p,
+button,
+.alert,
+textarea,
+input {
+    font-size: 14px;
+}
+
+.alert {
+    width: 300px;
+    margin-left: 0px;
+}
+
+button {
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.comment-list li .comment-body .reply:hover {
+    color: #000;
+    background: #e3e3e3;
+}
+
+#comentario {
+    width: 530px;
+}
+
+.row,
+.col {
+    padding: 0px;
+    margin: 0px;
+}
+
+P {
+    text-align: justify;
+}
+
+.col {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ocultar {
+    display: none;
+}
+
+.publicar {
+    font-size: 10px;
+}
+
+.contestaAdmin {
+    display: inline;
+}
+
+.row {
+    padding-bottom: 40px;
+}
+
+@media (width:768px) {
+    ul,
+    .comment-body {
+        position: relative;
+        right: 20px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    h3 {
+        position: relative;
+        left: 0px!important;
+    }
+    button {
+        margin-bottom: 10px;
+    }
+    .main-content {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    p {
+        width: 620px;
+    }
+    #comentario {
+        width: 610px;
+    }
+    #admin {
+        width: 525px;
+    }
+    .ver {
+        margin-left: 0px;
+    }
+    .NoExisten {
+        padding-left: 50px;
+    }
+}
+
+@media (width:1024px) {
+    ul,
+    .comment-body {
+        position: relative;
+        right: 0px;
+        left: 20px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    h3 {
+        position: relative;
+        left: 0px!important;
+    }
+    .ver {
+        margin-bottom: 10px;
+        margin-left: 50px;
+    }
+    .main-content {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    p {
+        width: 820px;
+    }
+    #admin {
+        width: 725px;
+    }
+    button {
+        margin-bottom: 15px;
+    }
+    #comentario {
+        width: 425px;
+    }
+    .NoExisten {
+        padding-left: 50px;
+    }
+}
+
+@media (width:414px) {
+    .rowComentarios {
+        position: relative;
+        right: 0px;
+        left: 240px;
+    }
+    .admin {
+        position: relative;
+        right: 0px;
+        left: 50px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    h3 {
+        position: relative;
+        left: 0px!important;
+    }
+    .ver {
+        margin-bottom: 10px;
+        margin-left: 30px;
+    }
+    .main-content {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    p {
+        width: 350px;
+    }
+    #admin {
+        width: 315px;
+    }
+    img {
+        display: none;
+    }
+    button {
+        padding: 2px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 12px;
+    }
+    .alert {
+        font-size: 10px;
+        width: 225px;
+    }
+    .contestacion {
+        width: 225px;
+        margin: 0px;
+    }
+    .NoExisten {
+        padding-left: 40px!important;
+    }
+    hr {
+        padding: 0px;
+    }
+    #comentario {
+        width: 305px;
+    }
+}
+
+@media (width:375px) {
+    .rowComentarios {
+        position: relative;
+        right: 0px;
+    }
+    #comentario {
+        width: 265px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    input {
+        font-size: 12px;
+    }
+    textarea {
+        width: 250px;
+        font-size: 12px;
+    }
+    .admin {
+        margin-left: 20px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    h3,
+    hr {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-left: 20px;
+    }
+    .ver {
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    .main-content {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    p {
+        width: 290px;
+        font-size: 12px!important;
+    }
+    .meta {
+        width: 210px;
+        font-size: 11px!important;
+    }
+    #admin {
+        width: 275px;
+    }
+    img {
+        display: none;
+    }
+    button {
+        padding: 2px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+    .alert {
+        font-size: 10px;
+        width: 200px;
+    }
+    .contestacion {
+        width: 200px;
+        margin: 0px;
+    }
+    #mostrar,
+    .row {
+        padding: 0px;
+    }
+    .comment-body {
+        width: 300px!important;
+    }
+    .comment-body-admin {
+        width: 200px!important;
+    }
+    .contestacionAmin2,
+    .contestacionAmin {
+        margin: 0px!important;
+        padding: 0px!important;
+    }
+    .NoExisten {
+        padding-left: 20px!important;
+    }
+}
+
+@media (width:411px) {
+    .rowComentarios {
+        position: relative;
+        right: 0px;
+        left: 230px;
+    }
+    .admin {
+        position: relative;
+        right: 0px;
+        left: 50px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    h3 {
+        position: relative;
+        left: 0px!important;
+    }
+    .ver {
+        margin-bottom: 10px;
+        margin-left: 30px;
+    }
+    .main-content {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    p {
+        width: 350px;
+    }
+    #admin {
+        width: 320px;
+    }
+    img {
+        display: none;
+    }
+    button {
+        padding: 2px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 12px;
+    }
+    .alert {
+        font-size: 10px;
+        width: 225px;
+    }
+    .contestacion {
+        width: 225px;
+        margin: 0px;
+    }
+    .NoExisten {
+        padding-left: 40px!important;
+    }
+    hr {
+        padding: 0px;
+    }
+    #comentario {
+        width: 305px;
+    }
+}
+
+@media (width:320px) {
+    .rowComentarios {
+        position: relative;
+        right: 0px;
+        left: 0px;
+    }
+    #comentario {
+        width: 210px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    input {
+        font-size: 12px;
+    }
+    textarea {
+        width: 250px;
+        font-size: 12px;
+    }
+    .admin {
+        margin-left: 20px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    h3,
+    hr {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-left: 20px;
+    }
+    .ver {
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    .main-content {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    p {
+        width: 270px;
+        font-size: 12px!important;
+    }
+    .meta {
+        width: 240px;
+        font-size: 11px!important;
+    }
+    #admin {
+        width: 240px;
+    }
+    img {
+        display: none;
+    }
+    button {
+        padding: 2px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+    .alert {
+        font-size: 10px;
+        width: 180px;
+    }
+    .contestacion {
+        width: 180px;
+        margin: 0px;
+    }
+    #mostrar,
+    .row {
+        padding: 0px;
+    }
+    .comment-body {
+        width: 280px!important;
+    }
+    .comment-body-admin {
+        width: 200px!important;
+    }
+    .contestacionAmin2,
+    .contestacionAmin {
+        margin: 0px!important;
+        padding: 0px!important;
+    }
+    .NoExisten {
+        padding-left: 20px!important;
+    }
+}
+
+@media (width:360px) {
+    .rowComentarios {
+        position: relative;
+        right: 0px;
+    }
+    #comentario {
+        width: 250px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    input {
+        font-size: 12px;
+    }
+    textarea {
+        width: 250px;
+        font-size: 12px;
+    }
+    .admin {
+        margin-left: 20px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    h3,
+    hr {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-left: 20px;
+    }
+    .ver {
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    .main-content {
+        padding: 0px!important;
+        margin: 0px!important;
+    }
+    p {
+        width: 280px;
+        font-size: 12px!important;
+    }
+    .meta {
+        width: 240px;
+        font-size: 11px!important;
+    }
+    #admin {
+        width: 250px;
+    }
+    img {
+        display: none;
+    }
+    button {
+        padding: 2px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+    .alert {
+        font-size: 10px;
+        width: 200px;
+    }
+    .contestacion {
+        width: 200px;
+        margin: 0px;
+    }
+    #mostrar,
+    .row {
+        padding: 0px;
+    }
+    .comment-body {
+        width: 300px!important;
+    }
+    .comment-body-admin {
+        width: 200px!important;
+    }
+    .contestacionAmin2,
+    .contestacionAmin {
+        margin: 0px!important;
+        padding: 0px!important;
+    }
+    .NoExisten {
+        padding-left: 20px!important;
+    }
+}
+
+@media (min-width:1024px) {
+    .NoExisten {
+        padding-left: 50px;
+    }
+}

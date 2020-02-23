@@ -1,0 +1,84 @@
+<form #mensajeForm="ngForm" class="background rounded ">
+    <h2>Deja tus datos</h2>
+
+    <div class="form-group row">
+        <label class="col-sm-3 col-lg-2  col-md-3 col-xs-3 col-3 col-form-label" for="nombre">Nombre </label>
+        <div class="col-sm-8 col-lg-9 col-sm-8 col-md-8 col-xs-8 col-8">
+
+            <input type="text" class="form-control form-control-sm " style="padding-top: 10%" #nombre="ngModel" id="nombre" [(ngModel)]="Email.nombre" name="nombre" required minlength="3vb">
+            <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf="nombre.errors.required ">
+                    campo requerido
+                </div>
+
+                <div *ngIf="nombre.errors.minlength ">
+                    al menos 3 caracteres
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label class="col-lg-2 col-sm-2 col-md-2 col-xs-2 col-2 col-form-label" for="email">Email</label>
+        <div class="col-sm-9">
+            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" type="email" id="email" #email="ngModel" [(ngModel)]="Email.email" required name="email">
+            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors.required ">
+                    campo requerido
+                </div>
+                <div *ngIf="email.errors ">
+                    debe tener un formato válido
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="telefono">Teléfono </label>
+        <div class="col-sm-9">
+
+            <input type="tel" pattern="[0-9]{9}" class="form-control form-control-sm" id="telefono" #telefono="ngModel" [(ngModel)]="Email.telefono" required minlength="9" name="telefono">
+
+            <div class="alert alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                <div *ngIf="telefono.errors.required ">
+                    campo requerido
+                </div>
+
+                <div *ngIf="telefono.errors ">
+                    formato incorrecto
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="empresa">Empresa </label>
+        <div class="col-sm-9">
+
+            <input type="text" class="form-control form-control-sm" id="empresa" #empresa="ngModel" [(ngModel)]="Email.empresa" required minlength="3" name="empresa">
+
+            <div class="alert alert-danger" *ngIf="empresa.invalid && (empresa.dirty || empresa.touched)">
+                <div *ngIf="empresa.errors.required ">
+                    campo requerido
+                </div>
+
+                <div *ngIf="empresa.errors.minlength ">
+                    al menos 3 caracteres
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group ">
+        <button [ngClass]="{'boton': mensajeForm.valid}" class="btn btn-rounded botonDisabled " type="button" role="button" (click)='enviarmail(mensajeForm)' [disabled]="!mensajeForm.form.valid">Enviar</button>
+
+        <div class="alert " role="alert" *ngIf="enviado==true">
+            * Mensaje Enviado
+
+        </div>
+
+    </div>
+</form>

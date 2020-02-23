@@ -1,0 +1,124 @@
+    ul {
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+    }
+    
+    button {
+        border: none;
+        text-align: center;
+        font-size: 18px
+    }
+    
+    button:hover {
+        border: none;
+    }
+    
+    li {
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+    }
+    
+    .row {
+        padding-top: 30px;
+    }
+    
+    * {
+        font-family: "Josefin Sans";
+        margin: 0px;
+        background-color: transparent;
+    }
+    
+    button {
+        color: #4F6E85;
+        font-weight: bold;
+        text-decoration: none;
+        padding-top: 15px;
+        border: none;
+    }
+    
+    button:hover {
+        text-decoration: none;
+        font-size: 1.1em;
+        text-shadow: 1px 1px#000000;
+    }
+    
+    button:focus {
+        outline: 0;
+    }
+    
+    .wrapper {
+        /*Margen superior del 20% y luego centramos con un margen lateral izquierdo del 30%*/
+        animation: aparecer 4s ease-out 1;
+        /*Definimos un nombre para la animación (“aparecer”), un tiempo total de 4segundos de duración y un movimiento suavizado al final*/
+        -webkit-animation: aparecer 4s ease-out 1;
+        /*Chrome, Safari, Android, iOs*/
+        -moz-animation: aparecer 4s ease-out 1;
+        /*Firefox*/
+        -o-animation: aparecer 4s ease-out 1;
+        /*Opera*/
+        -ms-animation: aparecer 4s ease-out 1;
+        /*Internet Explorer*/
+        padding-top: 0px;
+    }
+    
+    @keyframes aparecer {
+        from {
+            margin-top: -30%;
+            opacity: 0;
+        }
+        /*Nótese el margen negativo para situarlo bien arriba*/
+        50% {
+            margin-top: 10%;
+            opacity: 0.2;
+        }
+        /*Vemos que cuando haya transcurrido el 50% del tiempo, es decir, 2s, el margen superior ha pasado de -50% a 10%, y la opacidad de 0 a 0.2*/
+        to {
+            margin-top: 15%;
+            opacity: 1;
+        }
+        /*Es el ultimo fotograma de la animación, o punto final*/
+    }
+    
+    @-moz-keyframes aparecer {
+        from {
+            margin-top: -30%;
+            opacity: 0;
+        }
+        50% {
+            margin-top: 10%;
+            opacity: 0.2;
+        }
+        to {
+            margin-top: 15%;
+            opacity: 1;
+        }
+    }
+    
+    @media (width:1024px) {
+        .wrapper {
+            padding-top: 50px;
+        }
+    }
+    
+    @media (width:768px) {
+        .wrapper {
+            padding-top: 0px;
+        }
+    }
+    
+    @media (width:360px) {
+        .wrapper {
+            padding-top: 0px;
+        }
+        .row {
+            padding: 00px;
+        }
+        button {
+            font-size: 15px;
+        }
+        .wrapper {
+            padding-top: 50px,
+        }
+    }

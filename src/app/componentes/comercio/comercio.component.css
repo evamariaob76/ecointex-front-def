@@ -1,0 +1,339 @@
+.card-title {
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+}
+
+* {
+    font-family: 'Amaranth', sans-serif;
+    text-align: justify;
+}
+
+div>img {
+    width: 100%;
+    height: 100%;
+}
+
+.actividad {
+    color: grey;
+}
+
+.main {
+    width: min-content;
+}
+
+.fa-asterisk {
+    font-size: 7px;
+}
+
+.bio {
+    background: #fff;
+    font-size: 12px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.imagenes {
+    padding-left: 40px;
+}
+
+ul {
+    display: flex;
+    align-items: left;
+    padding-top: 0px;
+}
+
+li {
+    height: 30px !important;
+    padding-right: 10px;
+}
+
+li a,
+.bio {
+    text-decoration: none;
+}
+
+.bio img {
+    -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+    max-width: 25px;
+    border-radius: 50%;
+}
+
+div a {
+    display: inline;
+}
+
+.wrapper {
+    padding-top: 130px;
+    padding-left: 80px;
+    padding-right: 60px;
+}
+
+.fa-heart {
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+.fa-facebook-f,
+.fa-comment {
+    font-size: 18px;
+    color: #B2BABB;
+    margin-top: 5px;
+}
+
+.social a {
+    padding-right: 6px;
+    color: #B2BABB;
+}
+
+span {
+    text-align: center;
+    vertical-align: center;
+}
+
+.cabecera {
+    padding-top: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    height: 40px;
+    padding-bottom: 0px;
+}
+
+.length {
+    padding-top: 20px!important;
+}
+
+.corazon {
+    display: inline-block;
+    font-size: 20px;
+    color: #B2BABB;
+    transform-origin: center;
+}
+
+.corazonClick {
+    display: inline-block;
+    font-size: 20px;
+    color: #B2BABB;
+    transform-origin: center;
+    animation: latidos .50s;
+}
+
+p {
+    font-size: 16px;
+    padding-bottom: 0px;
+    font-family: "Josefin Sans";
+    text-align: justify;
+}
+
+h2 {
+    font-weight: bold;
+    font-family: 'Merienda', cursive;
+}
+
+label {
+    font-size: 14px;
+}
+
+.resumen {
+    padding-top: 20px;
+}
+
+@keyframes latidos {
+    from {
+        color: red;
+    }
+    to {
+        color: #B2BABB;
+    }
+}
+
+span {
+    position: relative;
+    bottom: 1px;
+    left: 0px;
+}
+
+.boton {
+    background: #00004d;
+    color: white;
+}
+
+.boton:hover {
+    color: white;
+    background: #38688B;
+}
+
+@media (max-width:1024px) {
+    .wrapper {
+        padding-top: 145px;
+    }
+}
+
+@media (width:360px) {
+    p {
+        font-size: 12px;
+    }
+    .wrapper {
+        padding-top: 145px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .editar {
+        margin-top: 30px;
+    }
+    ul li a {
+        font-size: 10px;
+    }
+    img {
+        padding-left: 0px;
+    }
+    .imagenAdmin {
+        display: none;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    button {
+        font-size: 12px;
+        padding: 2px;
+    }
+    .cabecera {
+        margin: 0px;
+        height: 30px;
+        padding: 0px;
+    }
+    .editar {
+        padding: 0px!important;
+        margin: 0px;
+    }
+    .boton {
+        font-size: 12px!important;
+    }
+}
+
+@media (width:320px) {
+    p {
+        font-size: 12px;
+    }
+    .wrapper {
+        padding-top: 145px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .editar {
+        margin-top: 30px;
+    }
+    ul li a {
+        font-size: 10px;
+    }
+    img {
+        padding-left: 0px;
+    }
+    .imagenAdmin {
+        display: none;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    button {
+        font-size: 12px;
+        padding: 2px;
+    }
+    .cabecera {
+        margin: 0px;
+        height: 30px;
+        padding: 0px;
+    }
+    .editar {
+        padding: 0px!important;
+        margin: 0px;
+    }
+    .boton {
+        font-size: 12px!important;
+    }
+    .fa-facebook-f,
+    .fa-comment {
+        font-size: 14px;
+    }
+    .corazon {
+        font-size: 16px;
+        padding-top: 2px;
+    }
+}
+
+@media (width:375px) {
+    p {
+        font-size: 12px;
+    }
+    .wrapper {
+        padding-top: 145px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .editar {
+        margin-top: 30px;
+    }
+    ul li a {
+        font-size: 10px;
+    }
+    img {
+        padding-left: 0px;
+    }
+    .imagenAdmin {
+        display: none;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    button {
+        font-size: 12px;
+        padding: 2px;
+    }
+    .cabecera {
+        margin: 0px;
+        height: 30px;
+        padding: 0px;
+    }
+    .editar {
+        padding: 0px!important;
+        margin: 0px;
+    }
+    .boton {
+        font-size: 12px!important;
+    }
+}
+
+@media (min-width:411px) and (max-width:414px) {
+    .wrapper {
+        padding-top: 120px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .editar {
+        margin-top: 30px;
+    }
+    ul li a {
+        font-size: 10px;
+    }
+    img {
+        padding-left: 40px;
+    }
+    .imagenAdmin {
+        display: none;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .boton {
+        font-size: 12px!important;
+    }
+}

@@ -1,0 +1,50 @@
+<app-navbar>
+
+</app-navbar>
+
+
+
+
+<div class="row" *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">
+    <div class="col-lg-12">
+
+        <div class=" contenedor card bordes mb-3">
+            <h5>
+                <div class="card-header card-title cabecera">Comentarios de los comercios</div>
+            </h5>
+            <div class="card-body text-info">
+
+                <div *ngIf="!comentarios" class="alert alert-info">No hay registros ern la base de datos</div>
+                <table class="table table-striped" *ngIf="comentarios">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre Comercio</th>
+                            <th scope="col">Nombre Suscriptor</th>
+                            <th class="ocultar" scope="col">Id de Comentario</th>
+                            <th scope="col">Comentarios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comentari of comentario">
+                            <td>{{comercio.nombre}}</td>
+                            <td>{{comentari.nombre}}</td>
+                            <td class="ocultar">{{comentari.id}}</td>
+                            <td>{{comentari.comentario}}</td>
+
+                        </tr>
+
+                    </tbody>
+                    <div class="row">
+                    </div>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="authService.isAuthenticated()==false">
+    <div class="col-lg-12">
+        Ha caducado la sesión, no tienes acceso a este recurso
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,245 @@
+* {
+    font-family: 'Amaranth', sans-serif;
+}
+
+.form-group>label {
+    font-weight: bold;
+}
+
+.background,
+.fotos {
+    background: white;
+}
+
+.formulario {
+    padding-top: 80px!important;
+}
+
+h2,
+#usuario {
+    text-align: center;
+}
+
+input,
+textarea,
+.img {
+    font-style: italic;
+    font-size: 14px;
+}
+
+small {
+    color: black;
+    font-weight: normal;
+}
+
+h4,
+.lista {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#nuevo {
+    padding-top: 20px
+}
+
+.comercio {
+    background: white;
+}
+
+span {
+    font-weight: bold;
+    color: #4F6E85;
+}
+
+.rowfotos {
+    padding-top: 40px;
+}
+
+span {
+    color: #1D1936;
+}
+
+.btn-dark {
+    margin-top: 20px;
+}
+
+label>label {
+    font-size: 10 px;
+}
+
+#comercio {
+    font-size: 1em;
+    text-transform: uppercase;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.botonDisabled {
+    background: #00004d;
+}
+
+.boton {
+    background: #00004d;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.boton:hover {
+    color: white;
+    background: #38688B;
+}
+
+input[id="img"],
+input[id="img1"],
+input[id="img2"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.estadoFalse {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    background-color: red;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+}
+
+.estadoTrue {
+    background-color: #38688B;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+}
+
+.estadoTrue:hover {
+    box-shadow: 0 0 15px 0#848B90;
+}
+
+.estadoFalse:hover {
+    box-shadow: 0 0 15px 0#333435;
+}
+
+#img+label,
+#img1+label,
+#img2+label {
+    cursor: pointer;
+    /* "hand" cursor */
+}
+
+#img:focus+label,
+#img1:focus+label,
+#img2:focus+label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.imagen {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.form-group {
+    margin: 12px;
+}
+
+.botonImg {
+    padding-top: 1px;
+}
+
+.i {
+    font-size: 13px;
+    background: #F1F0C9;
+    text-align: justify;
+}
+
+.columna {
+    padding: 0px;
+}
+
+.boton {
+    background: #00004d;
+    color: white
+}
+
+.boton:hover {
+    color: white;
+    background: #38688B;
+}
+
+p {
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+.iBoton {
+    background: #F1F0C9;
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+.row {
+    padding: 0px;
+}
+
+@media (max-width:416px) {
+    form {}
+    h2,
+    h4 {
+        font-size: 20px;
+    }
+    .alert,
+    .i {
+        font-size: 10px;
+    }
+    img {
+        width: 400px!important;
+    }
+    button,
+    p {
+        font-size: 10px;
+    }
+}
+
+@media (width: 1024px) {
+    .columna {
+        padding-top: 0px!important;
+    }
+    .i,
+    .alert {
+        font-size: 14px;
+    }
+}
+
+@media (width:768px) {
+    .columna {
+        padding-top: 0px!important;
+    }
+    .i,
+    .alert {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,67 @@
+<div class="row formulario  bg-light " *ngIf="authService.isAuthenticated()==false">
+    <div class="col-lg-12  ">
+        <div class="comment-form-wrap pt-5  ">
+            <h3 class="mb-5  "><span>{{titulo}}</span></h3>
+            <div class="row ">
+                <div class="col-lg-3 col-md-3 col-3"></div>
+                <div class="col-md-6 col-lg-6  col-12">
+                    <form #loginForm="ngForm" class="p-5 background ">
+                        <div class="obligatorio">
+                            * Todos los campos son obligatorios
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username *</label>
+                            <input type="text" class="form-control" #username="ngModel" id="username" [(ngModel)]="usuario.username" name="username" required minlength="3vb">
+                            <div class="alert alert-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
+                                <div *ngIf="username.errors.required ">
+                                    Usuario es requerido
+                                </div>
+
+                                <div *ngIf="username.errors.minlength ">
+                                    Usuario debe tener al menos 3 caracteres
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password * </label>
+                            <input type="password" class="form-control" id="password" #password="ngModel" [(ngModel)]="usuario.password" required minlength="5" name="password">
+
+                            <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                                <div *ngIf="password.errors.required ">
+                                    Password es requerido
+                                </div>
+
+                                <div *ngIf="password.errors.minlength ">
+                                    Password debe tener al menos 5 caracteres
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button [disabled]="!loginForm.valid" [ngClass]="{'boton': loginForm.valid}" type="submit" (click)='login()' class="btn btn-rounded botonDisabled" type="button" role="button">Enviar</button>
+
+                    </form>
+
+                </div>
+                <div class="col-lg-3 col-md-3 col-3"></div>
+
+
+            </div>
+            <div class="row contrasena">
+                <div class="col-lg-3 col-md-3 col-3"></div>
+
+                <div class="col-lg-6 col-md-6 col-6 recuperar">
+                    <div [ngClass]="{'estadoTrue':recuperar,'estadoFalse':!recuperar}">Si has olvidado la contraseña pulsa en el siguient enlace:
+                        <a [routerLink]="['/password']">
+                            <p>Recuperar contraseña</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-3"></div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

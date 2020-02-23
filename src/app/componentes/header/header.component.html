@@ -1,0 +1,37 @@
+<div class="row principal">
+    <div class="col-lg-12 parent  my-auto  text-center  " *ngIf="foto">
+        <header [ngStyle]="{'background': ' url(' + foto + ') no-repeat 50% 50% ', 'display': 'block', 'background:size':'contain'}">
+            <!--  <header [style.background-image]="'url(' + foto + ')'">
+-->
+
+            <nav>
+                <div class="logo"> D'IXX al XXI
+                </div>
+                <div class="menu">
+                    <ul>
+
+                        <li>
+                            <a [routerLink]="['/home']">Home</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/clientes/form']">Suscribirse</a>
+                        </li>
+                        <li><a [routerLink]="['/contacto/form']">Contacto</a></li>
+                        <li>
+                            <form action="#" class="search-top-form">
+                                <input type="text" id="s" placeholder="para buscar escribe y enter..." #buscarSitio (keyup.enter)="findByName(buscarSitio.value); ">
+                                <span class="icon fa fa-search"></span>
+                            </form>
+                        </li>
+
+                        <button *ngIf="!authService.isAuthenticated()" class="btn btn-light" [routerLink]="['/admin']">Login</button>
+                        <button *ngIf="authService.isAuthenticated()==true && authService.hasRole('ROLE_ADMIN')" class="btn btn-light" [routerLink]="['/admin']"> Admin</button>
+
+                    </ul>
+
+                </div>
+
+            </nav>
+        </header>
+    </div>
+</div>

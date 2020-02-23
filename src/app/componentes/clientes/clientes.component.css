@@ -1,0 +1,143 @@
+    th,
+    td {
+        text-align: center;
+    }
+    
+    .row {
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+    
+    .cabecera {
+        color: #1d1936;
+    }
+    
+    .bordes {
+        border: 1px solid #1d1936;
+    }
+    
+    .boton {
+        background: #00004d;
+        color: white
+    }
+    
+    .boton:hover {
+        color: white;
+        background: #38688B;
+    }
+    
+    .row {
+        background: white;
+        padding-bottom: 50px;
+    }
+    
+    @media (width:320px) {
+        * {
+            font-size: 10px;
+        }
+        #ocultar {
+            display: none;
+        }
+        .table-striped {
+            width: 200px;
+        }
+        button {
+            font-size: 10px;
+            padding: 0px;
+        }
+        th,
+        td {
+            padding: 2px!important;
+        }
+        .contenedor {
+            width: 280px;
+        }
+        .card-body {
+            padding-left: 15px;
+        }
+    }
+    
+    @media (width:360px) {
+        * {
+            font-size: 10px;
+        }
+        #ocultar {
+            display: none;
+        }
+        .table-striped {
+            width: 200px;
+        }
+        button {
+            font-size: 10px;
+            padding: 0px;
+        }
+        th,
+        td {
+            padding: 7px!important;
+        }
+        .contenedor {
+            width: 320px;
+        }
+        .card-body {
+            padding-left: 15px;
+        }
+    }
+    
+    @media (min-width:411px) and (max-width:500px) {
+        * {
+            font-size: 10px;
+        }
+        #ocultar {
+            display: none;
+        }
+        .table-striped {
+            width: 200px;
+        }
+        button {
+            font-size: 10px;
+            padding: 0px;
+        }
+    }
+    
+    @media (width:375px) {
+        * {
+            font-size: 10px;
+        }
+        #ocultar {
+            display: none;
+        }
+        .table-striped {
+            width: 200px;
+        }
+        button {
+            font-size: 10px;
+            padding: 0px;
+        }
+        th,
+        td {
+            padding: 7px!important;
+        }
+        .card-body {
+            padding: 17px;
+        }
+    }
+    
+    @media (width:768px) {
+        * {
+            font-size: 10px;
+        }
+        .contenedor {
+            width: 680px;
+            margin: 0px;
+        }
+        button {
+            font-size: 12px;
+        }
+        th,
+        td {
+            padding: 2px!important;
+        }
+        .client {
+            padding-top: 100px!important;
+        }
+    }

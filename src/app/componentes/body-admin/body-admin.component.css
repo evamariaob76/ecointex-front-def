@@ -1,0 +1,19 @@
+    .col-lg-4 {
+        padding-top: 100px;
+    }
+    
+    * {
+        font-family: 'Amaranth', sans-serif;
+    }
+    
+    * {
+        background: #FFFFFF;
+    }
+    
+    .menu-lateral {
+        width: 100%;
+    }
+    
+    .row {
+        padding: 0px;
+    }

@@ -1,0 +1,76 @@
+.formulario {
+    padding-top: 80px!important;
+}
+
+.botonDisabled {
+    background: #00004d;
+}
+
+.boton {
+    background: #00004d;
+    color: white
+}
+
+.boton:hover {
+    color: white;
+    background: #38688B;
+}
+
+h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.background {
+    background: white;
+}
+
+.enviado {
+    text-align: center;
+    color: #4F6E85;
+    font-weight: bold;
+}
+
+.obligatorio {
+    color: #4F6E85;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+div {
+    font-weight: bolder;
+}
+
+.estadoTrue {
+    display: inline;
+}
+
+.contrasena {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.estadoFalse {
+    visibility: hidden;
+    height: 100px!important;
+}
+
+form {
+    border: 1px solid #4F6E85;
+}
+
+@media (max-width:700px) {
+    .alert {
+        font-size: 10px;
+    }
+    h3 {
+        font-size: 16px!important;
+        margin-top: 0px;
+    }
+    .form-group,
+    .obligatorio,
+    p,
+    input {
+        font-size: 10px!important;
+    }
+}

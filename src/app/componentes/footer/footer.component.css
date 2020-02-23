@@ -1,0 +1,36 @@
+.row {
+    height: 100px;
+    text-align: center;
+    color: #1D1936;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 15px;
+}
+
+.resaltar {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.footer {
+    background: rgba(179, 194, 124);
+    background: -moz-linear-gradient(left, rgba(179, 194, 124) 0%, rgba(174, 184, 69) 28%, rgba(128, 142, 46) 53%, rgba(94, 110, 41) 86%, rgba(41, 64, 29) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(179, 194, 124)), color-stop(28%, rgba(174, 184, 69)), color-stop(53%, rgba(128, 142, 46)), color-stop(86%, rgba(94, 110, 41)), color-stop(100%, rgba(41, 64, 29)));
+    background: -webkit-linear-gradient(left, rgba(179, 194, 124) 0%, rgba(174, 184, 69) 28%, rgba(128, 142, 46)53%, rgba(94, 110, 41) 86%, rgba(41, 64, 29) 100%);
+    background: -o-linear-gradient(left, rgba(179, 194, 124) 0%, rgba(174, 184, 69) 28%, rgba(128, 142, 46)53%, rgba(94, 110, 41) 86%, rgba(41, 64, 29) 100%);
+    background: -ms-linear-gradient(left, rgba(179, 194, 124) 0%, rgba(174, 184, 69) 28%, rgba(128, 142, 46)53%, rgba(94, 110, 41) 86%, rgba(41, 64, 29) 100%);
+    background: linear-gradient(to right, rgba(179, 194, 124) 0%, rgba(174, 184, 69)28%, rgba(128, 142, 46) 53%, rgba(94, 110, 41) 86%, rgba(41, 64, 29) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8', GradientType=1);
+    text-align: center;
+    color: #1D1936;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+}
+
+.pie {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+span {
+    font-size: 15px!important;
+}

@@ -1,0 +1,57 @@
+<div class="firmalar contenedor">
+
+
+    <div class="container">
+        <h2>Buscando : <span id="termino">{{termino}}</span></h2>
+        <hr>
+        <div class="row animated fadeIn fast noExisten" *ngIf="comercios.length==0">
+            <div class="col-md-12">
+                <div class="alert alert-info " role="alert">
+                    No existen resultados con el término : {{termino}}
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="row " *ngFor="let comercio of comercios">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="firma-card row">
+                    <div class="col-md-5 img-padding-no">
+                        <div class="firma-resim"> <img src="{{url_firebase}}{{comercio.img}}{{url_firebase2}}" [alt]="comercio.nombre">
+
+                            <a href="#">
+
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="firma-aciklama card-body entrada">
+                            <h4>{{comercio.nombre}}</h4>
+                            <ul class="yacht-info__list space-2">
+                                <li>
+                                    <span class="vertical-align-mid encabezado">Fecha de apertura: <span  class="comercio">{{comercio.aparicion}}</span></span>
+                                </li>
+                                <li>
+                                    <span class="vertical-align-mid encabezado">Dirección:  <span  class="comercio">{{comercio.direccion}},  {{comercio.cp}}</span></span>
+                                </li>
+                                <li>
+                                    <span class="vertical-align-mid encabezado">Teléfono:  <span  class="comercio">{{comercio.telefono}}</span></span>
+                                </li>
+                                <li>
+                                    <span class="vertical-align-mid  ìe"><a  [routerLink]="[ '/comercios', comercio.id] " > ver más...</a></span>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>

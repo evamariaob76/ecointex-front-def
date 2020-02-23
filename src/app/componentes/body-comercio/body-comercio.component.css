@@ -1,0 +1,9 @@
+.comercio {
+    background: #FFFFFF;
+}
+
+@media (min-width:1024px) {
+    .menu-lateral {
+        padding-top: 200px;
+    }
+}

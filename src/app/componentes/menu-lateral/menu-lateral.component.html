@@ -1,0 +1,13 @@
+<div class="row wrapper">
+    <div class="col-md-12 contenedor ">
+        <ul>
+            <li *ngFor="let actividad of actividades; let i=index">
+                <button href="" (click)="verActividad( actividad) " *ngIf="i<=5">
+                        {{actividad}}</button>
+
+            </li>
+
+        </ul>
+
+    </div>
+</div>

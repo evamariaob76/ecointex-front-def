@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-lg-12">
+        <app-navbar>
+        </app-navbar>
+    </div>
+</div>
+
+
+<div class="row formulario bg-light">
+    <div class="col-lg-12 .col-md-12 col-sm-12 .col-xs-12">
+        <div class="comment-form-wrap pt-5  ">
+            <h3 *ngIf="authService.isAuthenticated()==false" class="mb-5  "><span>Suscribirse</span></h3>
+            <h3 *ngIf="authService.isAuthenticated()==true && cliente.username && authService.hasRole('ROLE_ADMIN')" class="mb-5  "><span>Editar suscriptor</span></h3>
+            <h3 *ngIf="authService.isAuthenticated()==true &&  !cliente.username && authService.hasRole('ROLE_ADMIN')" class="mb-5  "><span>Crear suscriptor</span></h3>
+            <p class="mb-5  ">* Al suscribirte te informaremos en tu mail cuando se actualice el blog</p>
+
+            <div class="row ">
+                <div class="col-lg-3 col-md-1 col-sm-1 col-xs-1"></div>
+                <div class="col-lg-6  col-md-10 col-sm-10 col-xs-11">
+
+                    <form #clienteForm="ngForm" class="p-5 background">
+                        <div class="obligatorio">
+                            * Todos los campos son obligatorios
+                        </div>
+                        <div class="form-group  ">
+                            <label for="nombre">Username *</label>
+                            <input type="text " class="form-control" [(ngModel)]="cliente.username" name="username" required minlength="3" #username="ngModel">
+                            <div class="alert alert-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
+                                <div *ngIf="username.errors.required ">
+                                    Nombre de usuario es requerido
+                                </div>
+
+                                <div *ngIf="username.errors.minlength ">
+                                    Nombre de usuario debe tener al menos 3 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" class="form-control" [(ngModel)]="cliente.nombre" required minlength="3" name="nombre" #nombre="ngModel">
+                            <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                <div *ngIf="nombre.errors.required ">
+
+                                    Nombre es requerido
+                                </div>
+                                <div *ngIf="nombre.errors.minlength ">
+                                    Nombre debe tener al menos 3 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="apellidos">Apellidos *</label>
+                            <input type="text" class="form-control" [(ngModel)]="cliente.apellido" required minlength="3" name="apellido" #apellido="ngModel">
+                            <div class="alert alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                                <div *ngIf="apellido.errors.required ">
+
+                                    Apellido es requerido
+                                </div>
+                                <div *ngIf="apellido.errors.minlength ">
+                                    Apellido debe tener al menos 3 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="email">Email *</label>
+                            <input pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" type="email" class="form-control" [(ngModel)]="cliente.email" required name="email" #email="ngModel">
+                            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                                <div *ngIf="email.errors.required ">
+
+                                    Email es requerido
+                                </div>
+                                <div *ngIf="email.errors ">
+                                    Email con formato incorrecto
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <button [ngClass]="{'boton': clienteForm.valid}" class="btn btn-rounded botonDisabled " type="button" role="button" (click)='create(clienteForm)' *ngIf="!cliente.id else mostrar" [disabled]="!clienteForm.form.valid">Suscribirse</button>
+                            <ng-template #mostrar>
+                                <button [ngClass]="{'boton': clienteForm.valid}" class="btn btn-rounded botonDisabled" role="button" (click)='update()' [disabled]="!clienteForm.form.valid">Editar</button>
+                            </ng-template>
+                            <div *ngIf="creadoCliente" class="alert alert-info" role="alert">
+                                *te has suscrito correctamente {{username.value}}
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3 .col-xs-3"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

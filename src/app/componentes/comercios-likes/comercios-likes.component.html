@@ -1,0 +1,55 @@
+<app-navbar>
+
+</app-navbar>
+
+
+
+<div class="row" *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">
+    <div class="col-lg-12 col-sm-12 col-md-12">
+        <div class=" contenedor card bordes mb-3">
+            <h5>
+                <div class="card-header card-title cabecera">Listado de comercios</div>
+            </h5>
+            <div class="card-body ">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Comercio</th>
+                            <th id="ocultar" scope="col">Fecha</th>
+                            <th scope="col">Likes</th>
+                            <th scope="col">visitas</th>
+
+                            <th scope="col">Comentarios</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comercio of comercios">
+                            <td>{{comercio.nombre}}</td>
+                            <td id="ocultar">{{comercio.createAt| date: 'dd/MM/yy'}}</td>
+                            <td>{{comercio.likes}}</td>
+                            <td>{{comercio.visitas}}</td>
+                            <td><a [routerLink]="['/comentarios', comercio.id]">ver comentarios</a></td>
+                            <td> <button class="btn btn-rounded boton" [routerLink]="['/editar', comercio.id]">Editar </button>
+                            </td>
+                            <td> <button class="btn btn-rounded btn-danger" (click)='delete(comercio)'>Eliminar </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <app-paginator-comercios *ngIf="paginadorComercios" [paginadorComercios]="paginadorComercios"></app-paginator-comercios>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="authService.isAuthenticated()==false">
+    <div class="col-lg-12">
+        Ha caducado la sesión, no tienes acceso a este recurso
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <app-footer></app-footer>
+    </div>
+</div>

@@ -1,0 +1,247 @@
+<a href="#comments">
+</a>
+<div class="row container-fluid">
+    <div class="col-lg-1 padding">
+    </div>
+
+    <div class="col-lg-10 padding">
+        <h3>Deja un comentario</h3>
+
+        <div class="comment-form-wrap pt-2  ">
+
+            <form class="p-4 background bg-light formulario " #comentarioForm="ngForm" novalidate (ngSubmit)="create(comentarioForm)">
+
+                <div class="form-group  ">
+
+
+                    <label for="name">Nombre *</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="comentario.nombre" required minlength="3" name="nombre" #nombre="ngModel">
+                    <div class="alert alert-danger" style="width: 100%" *ngIf="nombre.invalid && nombre.dirty && nombre.touched ">
+                        <div *ngIf="nombre.errors.required ">
+                            Nombre es requerido
+                        </div>
+
+                        <div *ngIf="nombre.errors.minlength ">
+                            Nombre debe tener mínimo 3 caracteres
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="form-group  ">
+
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" id="email" [(ngModel)]="comentario.email" name="email" required email #email="ngModel">
+                    <div class="alert alert-danger" style="width: 100%" *ngIf="email.invalid && email.dirty && email.touched">
+                        <div *ngIf="email.errors.required ">
+
+                            Email es requerido
+                        </div>
+                        <div *ngIf="email.errors.email ">
+
+                            Email debe tener un formato válido
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="form-group  ">
+
+
+                    <label for="message">Mensaje</label>
+                    <textarea id="comentario" [(ngModel)]="comentario.comentario" name="comentario" cols="30" rows="3" class="form-control" required minlength="10" #mensaje="ngModel"></textarea>
+                    <div class="alert alert-danger" style="width: 100%" *ngIf="mensaje.invalid && mensaje.dirty && mensaje.touched">
+                        <div *ngIf="mensaje.errors.required ">
+                            Comentario es requerido
+                        </div>
+
+                        <div *ngIf="mensaje.errors.minlength ">
+                            Comentario debe tener al menos 10 caracteres
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-rounded botonDisabled" [ngClass]="{'boton': comentarioForm.valid}" type="submit" role="button" [disabled]="!comentarioForm.form.valid">Publicar comentario</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<h3 class="mb-12"> Comentarios</h3>
+
+<hr>
+<h4 class="mb-12 NoExisten" *ngIf="noExistenComentarios===true"> No existen comentarios </h4>
+
+<div class="row container-fluid rowComentarios" id="mostrar">
+    <div class="col-md-1 col-1 col-xs-1 col-lg-1 main-content">
+    </div>
+    <div class="col-md-12 col-lg-12 col-sm-12 col-12 col-xs-12 main-content">
+        <div class="div">
+            <div class="pt-12">
+
+                <form id="contestacionForm" #contestacionForm="ngForm">
+                    <ul class="comment-list" *ngFor="let comentario of comercio.comentarios; let i=index">
+                        <li class="comment" id="comment" *ngIf="i<4  && comprobar==false">
+                            <div id="comentariosInicio">
+                                <div class="vcard ">
+                                    <img src="{{url_firebase}}{{comercio.img}}{{url_firebase2}}" alt="imagen usuario">
+                                </div>
+                                <div class="comment-body">
+                                    <h4>{{comentario.nombre}}</h4>
+                                    <div class="meta">{{comentario.fecha |date:'fullDate'}} </div>
+                                    <p>{{comentario.comentario}}</p>
+
+
+
+                                    <button class="btn btn-rounded boton" id="contestar{{comentario.id}}" *ngIf="comentario.contestacion==null && authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')" (click)="cambiar(contestacionForm,comentario.id) ">contestar</button>
+
+                                    <button class="btn btn-rounded btn-danger" (click)="eliminar(comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">eliminar</button>
+                                    <div>
+                                        <div id="contestacion{{comentario.id}}" class="ocultar">
+                                            <textarea class="contestacion" name="contestacion " cols="40 " rows="3 " required minlength="2" [(ngModel)]="coment" #contestacion="ngModel"></textarea>
+                                            <div class="alert alert-danger" style="margin-left:50px" *ngIf="contestacion.invalid && (contestacion.dirty || contestacion.touched)">
+                                                <div *ngIf="contestacion.errors.minlength ">
+                                                    La contestación debe tener al menos 2 caracteres
+                                                </div>
+                                                <div *ngIf="contestacion.errors.required ">
+                                                    La contestación es requerida
+                                                </div>
+                                            </div>
+                                            <div class="botones">
+
+
+
+                                                <button class="btn btn-rounded botonDisabled" id="guardar" [ngClass]="{'boton': contestacionForm.valid}" [disabled]="!contestacionForm.form.valid" (click)="update(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">guardar</button>
+                                                <button class="btn btn-rounded boton" (click)="cancelar(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="admin" *ngIf="comentario.contestacion!=null && i<4  && comprobar==false">
+                            <div class="contestacion ">
+                                <div id=" comentariosInicio ">
+                                    <div class="vcard ">
+                                        <img src="{{url_firebase}}{{usuario.img}}{{url_firebase2}}" alt="imagen admin ">
+                                    </div>
+                                    <div class="comment-body comment-body-admin ">
+                                        <h4>Amind dice... </h4>
+                                        <div class="meta ">{{comentario.fecha |date:'fullDate'}} </div>
+                                        <p id="admin">{{comentario.contestacion}}</p>
+                                        <div *ngIf="ocultar==false">
+                                            <button class="btn btn-rounded boton" id="contestarAdmin{{comentario.id}}" (click)="cambiarAdmin(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">editar</button>
+                                            <button class="btn btn-rounded btn-danger" id="eliminar" (click)="eliminarContestacion(comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">eliminar</button>
+                                        </div>
+                                        <div>
+
+                                            <div id="contestacionAmin{{comentario.id}}" class="ocultar">
+                                                <textarea id="contestacion" class="contestacion" name="contestacion " cols="40 " rows="3 " required minlength="2" [(ngModel)]="coment" #contestacion="ngModel"></textarea>
+                                                <div id="contestacionFormulario" class="alert alert-danger" style="margin-left:50px" *ngIf="contestacion.invalid && contestacion.touched">
+                                                    <div id="contestacionFormulario" *ngIf="contestacion.invalid && (contestacion.dirty || contestacion.touched)">
+                                                        La contestación debe tener al menos 2 caracteres
+                                                    </div>
+                                                </div>
+                                                <div class="botones">
+                                                    <button class="btn btn-rounded botonDisabled" [ngClass]="{'boton': contestacionForm.valid}" id="guardar" [disabled]="!contestacionForm.form.valid" (click)="update(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">guardar</button>
+                                                    <button class="btn btn-rounded boton" id="cancelar" (click)="cancelar(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">cancelar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="comment" id="comment" *ngIf="comprobar ==true ">
+                            <div id="comentariosInicio">
+                                <div class="vcard ">
+                                    <img src="{{url_firebase}}{{comercio.img}}{{url_firebase2}}" alt="imagen usuario">
+                                </div>
+                                <div class="comment-body">
+                                    <h4>{{comentario.nombre}}</h4>
+                                    <div class="meta">{{comentario.fecha |date:'fullDate'}} </div>
+                                    <p>{{comentario.comentario}}</p>
+                                    <button class="btn btn-rounded boton" id="contestar{{comentario.id}}" *ngIf="comentario.contestacion==null && authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')" (click)="cambiar(contestacionForm,comentario.id) ">contestar</button>
+
+                                    <button class="btn btn-rounded btn-danger" (click)="eliminar(comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">eliminar</button>
+                                    <div>
+                                        <div id="contestacion{{comentario.id}}" class="ocultar">
+                                            <textarea class="contestacion" name="contestacion " cols="40 " rows="3 " required minlength="2" [(ngModel)]="coment" #contestacion="ngModel"></textarea>
+                                            <div class="alert alert-danger" style="margin-left:50px" *ngIf="contestacion.invalid && (contestacion.dirty || contestacion.touched)">
+                                                <div *ngIf="contestacion.errors.minlength ">
+                                                    La contestación debe tener al menos 2 caracteres
+                                                </div>
+                                                <div *ngIf="contestacion.errors.required ">
+                                                    La contestación es requerida
+                                                </div>
+                                            </div>
+                                            <div class="botones">
+                                                <button class="btn btn-rounded botonDisabled" id="guardar" [ngClass]="{'boton': contestacionForm.valid}" [disabled]="!contestacionForm.form.valid" (click)="update(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">guardar</button>
+                                                <button class="btn btn-rounded boton" (click)="cancelar(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="admin" *ngIf="comentario.contestacion!=null  && comprobar ==true ">
+                            <div class="contestacion ">
+                                <div id=" comentariosInicio ">
+                                    <div class="vcard ">
+                                        <img src="{{url_firebase}}{{usuario.img}}{{url_firebase2}}" alt="Imagen admin ">
+                                    </div>
+                                    <div class="comment-body comment-body-admin ">
+                                        <h4>Amind dice... </h4>
+                                        <div class="meta ">{{comentario.fecha |date:'fullDate'}} </div>
+                                        <p id="admin">{{comentario.contestacion}}</p>
+                                        <div *ngIf="ocultar==false">
+                                            <button class="btn btn-rounded boton" id="contestarAdmin{{comentario.id}}" (click)="cambiarAdmin(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">editar</button>
+                                            <button class="btn btn-rounded btn-danger" id="eliminar" (click)="eliminarContestacion(comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">eliminar</button>
+                                        </div>
+                                        <div>
+
+                                            <div id="contestacionAmin{{comentario.id}}" class="ocultar">
+                                                <textarea id="contestacion" class="contestacion" name="contestacion " cols="40 " rows="3 " required minlength="2" [(ngModel)]="coment" #contestacion="ngModel"></textarea>
+                                                <div id="contestacionFormulario" class="alert alert-danger" style="margin-left:50px" *ngIf="contestacion.invalid && contestacion.touched">
+                                                    <div id="contestacionFormulario" *ngIf="contestacion.invalid && (contestacion.dirty || contestacion.touched)">
+                                                        La contestación debe tener al menos 2 caracteres
+                                                    </div>
+                                                </div>
+                                                <div class="botones">
+                                                    <button class="btn btn-rounded botonDisabled" id="guardar" [ngClass]="{'boton': contestacionForm.valid}" [disabled]="!contestacionForm.form.valid" (click)="update(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">guardar</button>
+                                                    <button class="btn btn-rounded boton" id="cancelar" (click)="cancelar(contestacionForm,comentario.id) " *ngIf="authService.isAuthenticated()==true  && authService.hasRole('ROLE_ADMIN')">cancelar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 col-lg-1 main-content">
+    </div>
+    <div class="col-md-10 col-lg-12 main-content">
+        <button class="btn btn-rounded  boton ver" (click)="mostrar() " *ngIf="comprobar==false && myClass==false ">ver
+            todos
+            los
+            comentarios...</button>
+        <button class="btn btn-rounded  boton ver" (click)="mostrar() " *ngIf="comprobar==true">mostrar menos
+            comentarios...</button>
+
+    </div>
+</div>

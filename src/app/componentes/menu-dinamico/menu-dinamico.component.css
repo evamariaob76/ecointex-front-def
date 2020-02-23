@@ -1,0 +1,198 @@
+.comercios {
+    padding-left: 20px;
+}
+
+.titulo {
+    border-bottom: 1px solid #abb2b9;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-family: 'Merienda', cursive;
+}
+
+.menu {
+    text-align: center;
+    margin: auto;
+}
+
+.wrapper {
+    /*Margen superior del 20% y luego centramos con un margen lateral izquierdo del 30%*/
+    animation: aparecer 4s ease-out 1;
+    /*Definimos un nombre para la animación (“aparecer”), un tiempo total de 4segundos de duración y un movimiento suavizado al final*/
+    -webkit-animation: aparecer 4s ease-out 1;
+    /*Chrome, Safari, Android, iOs*/
+    -moz-animation: aparecer 4s ease-out 1;
+    /*Firefox*/
+    -o-animation: aparecer 4s ease-out 1;
+    /*Opera*/
+    -ms-animation: aparecer 4s ease-out 1;
+    /*Internet Explorer*/
+    padding-top: 20px;
+}
+
+.actualizaciones {
+    padding-top: 10px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.suscribirse {
+    font-family: 'Merienda', cursive;
+}
+
+.suscribirse p a {
+    color: #4F6E85;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.suscribirse p {
+    padding-top: 20px;
+}
+
+@keyframes aparecer {
+    from {
+        margin-top: -30%;
+        opacity: 0;
+    }
+    /*Nótese el margen negativo para situarlo bien arriba*/
+    50% {
+        margin-top: 10%;
+        opacity: 0.2;
+    }
+    /*Vemos que cuando haya transcurrido el 50% del tiempo, es decir, 2s, el margen superior ha pasado de -50% a 10%, y la opacidad de 0 a 0.2*/
+    to {
+        margin-top: 15%;
+        opacity: 1;
+    }
+    /*Es el ultimo fotograma de la animación, o punto final*/
+}
+
+.menuDinamico {
+    padding-bottom: 40px;
+}
+
+button {
+    border: none;
+    text-align: justify;
+    color: #4F6E85;
+    font-weight: bold;
+}
+
+button:hover {
+    border: none;
+    text-align: justify;
+    background: #4F6E85;
+    font-weight: normal;
+}
+
+@-o-keyframes aparecer {
+    from {
+        margin-top: -30%;
+        opacity: 0;
+    }
+    50% {
+        margin-top: 10%;
+        opacity: 0.2;
+    }
+    to {
+        margin-top: 15%;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes aparecer {
+    from {
+        margin-top: -30%;
+        opacity: 0;
+    }
+    50% {
+        margin-top: 10%;
+        opacity: 0.2;
+    }
+    to {
+        margin-top: 15%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes aparecer {
+    from {
+        margin-top: -30%;
+        opacity: 0;
+    }
+    50% {
+        margin-top: 10%;
+        opacity: 0.2;
+    }
+    to {
+        margin-top: 15%;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes aparecer {
+    from {
+        margin-top: -30%;
+        opacity: 0;
+    }
+    50% {
+        margin-top: 10%;
+        opacity: 0.2;
+    }
+    to {
+        margin-top: 15%;
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer {
+    /*Añadir los correspondientes prefijos a los diferentes navegadores*/
+    from {
+        top: -150%;
+        opacity: 0;
+    }
+    50% {
+        top: 40%;
+        opacity: 0.2;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@media (width:1024px) {
+    button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:414px) {
+    button {
+        font-size: 13px;
+    }
+    p a {
+        font-size: 12px;
+    }
+    .titulo {
+        font-size: 14px;
+    }
+    .actualizaciones {
+        padding-bottom: 50px;
+    }
+}
+
+@media (width:320px) {
+    button {
+        font-size: 12px;
+    }
+    p a {
+        font-size: 12px;
+    }
+    .titulo {
+        font-size: 14px;
+    }
+    .actualizaciones {
+        padding-bottom: 50px;
+    }
+}

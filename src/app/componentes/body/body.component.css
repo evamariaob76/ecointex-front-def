@@ -1,0 +1,347 @@
+            .card-title {
+                text-align: center;
+                font-weight: bold;
+                font-family: 'Merienda', cursive;
+            }
+            
+            .hijo {
+                padding-right: 25px;
+                padding-left: 50px;
+                padding-bottom: 10px;
+            }
+            
+            .wrapper {
+                z-index: 2;
+            }
+            
+            .text-muted {
+                text-transform: capitalize;
+                color: #58585a;
+                font-weight: bold;
+            }
+            
+            .capitalice {
+                text-align: left;
+            }
+            
+            .social div img {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .pie a {
+                font-size: 13px;
+                color: #4F6E85!important;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            
+            .pie a:hover {
+                font-size: 14px;
+                color: #4F6E85;
+                font-weight: bolder;
+                text-decoration: underline;
+            }
+            
+            .pie {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                font-family: 'Quicksand', sans-serif;
+                color: #4F6E85!important;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            
+            .entrada {
+                font-size: 14px;
+                padding-bottom: 0px;
+                font-family: "Josefin Sans";
+                text-align: justify;
+            }
+            
+            .social {
+                padding: 8px;
+                margin: 0px;
+            }
+            
+            .social div div a img {
+                margin-left: 5px;
+            }
+            
+            .wrapper {
+                border-right: 2px solid#bccbd8;
+                padding-right: 50px;
+                padding-top: 50px;
+            }
+            
+            .fa-heart {
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                transition: all .5s ease;
+            }
+            
+            .fa-facebook-f,
+            .fa-comment,
+            .fa-heart {
+                font-size: 15px;
+                color: #B2BABB;
+            }
+            
+            .social a {
+                padding-right: 6px;
+                color: #B2BABB;
+            }
+            
+            .ver {
+                animation-duration: 3s;
+                animation-name: blur;
+                animation-iteration-count: 1;
+            }
+            
+            @keyframes blur {
+                from {
+                    color: red;
+                }
+                to {
+                    color: #B2BABB;
+                }
+            }
+            
+            button {
+                color: #4F6E85;
+                font-weight: bold;
+                text-decoration: none;
+                padding-top: 15px;
+                text-align: center;
+                background-color: transparent;
+                border: none;
+            }
+            
+            img {
+                min-width: 250px;
+                min-height: 200px;
+            }
+            
+            button:focus {
+                outline: 0;
+            }
+            
+            button:hover {
+                font-size: 1.1em;
+                text-shadow: 1px 1px#000000;
+                background-color: transparent;
+            }
+            
+            .corazon {
+                display: inline-block;
+                font-size: 25px;
+                color: #B2BABB;
+                transform-origin: center;
+                font-weight: bold;
+            }
+            
+            .corazonClick {
+                display: inline-block;
+                font-size: 25px;
+                color: #B2BABB;
+                transform-origin: center;
+                animation: latidos .50s;
+            }
+            
+            .wrapper {
+                /*Margen superior del 20% y luego centramos con un margen lateral izquierdo del 30%*/
+                background: white;
+                text-align: center;
+                padding-bottom: 50px;
+                animation: aparecer 2s ease-out 1;
+                /*Definimos un nombre para la animación (“aparecer”), un tiempo total de 4segundos de duración y un movimiento suavizado al final*/
+                -webkit-animation: aparecer 3s ease-out 1;
+                /*Chrome, Safari, Android, iOs*/
+                -moz-animation: aparecer 2s ease-out 1;
+                /*Firefox*/
+                -o-animation: aparecer 2s ease-out 1;
+                /*Opera*/
+                -ms-animation: aparecer 2s ease-out 1;
+                /*Internet Explorer*/
+            }
+            
+            @keyframes aparecer {
+                from {
+                    margin-top: -30%;
+                    opacity: 0;
+                }
+                /*Nótese el margen negativo para situarlo bien arriba*/
+                50% {
+                    margin-top: 10%;
+                    opacity: 0.2;
+                }
+                /*Vemos que cuando haya transcurrido el 50% del tiempo, es decir, 2s, el margen superior ha pasado de -50% a 10%, y la opacidad de 0 a 0.2*/
+                to {
+                    margin-top: 15%;
+                    opacity: 1;
+                }
+                /*Es el ultimo fotograma de la animación, o punto final*/
+            }
+            
+            @-o-keyframes aparecer {
+                from {
+                    margin-top: -30%;
+                    opacity: 0;
+                }
+                50% {
+                    margin-top: 10%;
+                    opacity: 0.2;
+                }
+                to {
+                    margin-top: 15%;
+                    opacity: 1;
+                }
+            }
+            
+            @-moz-keyframes aparecer {
+                from {
+                    margin-top: -30%;
+                    opacity: 0;
+                }
+                50% {
+                    margin-top: 10%;
+                    opacity: 0.2;
+                }
+                to {
+                    margin-top: 15%;
+                    opacity: 1;
+                }
+            }
+            
+            @-webkit-keyframes aparecer {
+                from {
+                    margin-top: -30%;
+                    opacity: 0;
+                }
+                50% {
+                    margin-top: 10%;
+                    opacity: 0.2;
+                }
+                to {
+                    margin-top: 15%;
+                    opacity: 1;
+                }
+            }
+            
+            @-ms-keyframes aparecer {
+                from {
+                    margin-top: -30%;
+                    opacity: 0;
+                }
+                50% {
+                    margin-top: 10%;
+                    opacity: 0.2;
+                }
+                to {
+                    margin-top: 15%;
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes aparecer {
+                /*Añadir los correspondientes prefijos a los diferentes navegadores*/
+                from {
+                    top: -150%;
+                    opacity: 0;
+                }
+                50% {
+                    top: 40%;
+                    opacity: 0.2;
+                }
+                to {
+                    top: 50%;
+                    opacity: 1;
+                }
+            }
+            
+            @media (max-width:320px) {
+                .hijo {
+                    padding-left: 8px;
+                    padding-bottom: 10px;
+                }
+            }
+            
+            @media (width:360px) {
+                .hijo {
+                    padding-left: 20px;
+                    padding-bottom: 10px;
+                }
+            }
+            
+            @media (width:375px) {
+                .hijo {
+                    padding-left: 25px;
+                    padding-bottom: 10px;
+                }
+            }
+            
+            @media (width:411px) {
+                .hijo {
+                    padding-left: 30px;
+                    padding-bottom: 10px;
+                }
+            }
+            
+            @media (max-width:768px) {
+                .pie {
+                    padding: 0px;
+                    margin: 0px;
+                }
+                .wrapper {
+                    padding-top: 50px;
+                    border-right: none;
+                }
+            }
+            
+            @media (width:414px) {
+                .wrapper {
+                    padding-top: 50px!important;
+                }
+            }
+            
+            @media (max-width:414px) and (min-width:375px) {
+                .hijo {
+                    padding-bottom: 10px;
+                }
+            }
+            
+            @media (min-width:414px) {
+                .wrapper {
+                    padding-right: 10px;
+                    padding-top: 0px;
+                    padding-left: 0px;
+                }
+                .hijo {
+                    padding-left: 40px;
+                    padding-bottom: 10px;
+                }
+            }
+            
+            @media (width:1024px) {
+                .wrapper {
+                    border-right: none;
+                    padding-right: 80px;
+                    padding-left: 0px;
+                }
+            }
+            
+            @media (width:768px) {
+                .wrapper {
+                    border-right: none;
+                    padding-right: 80px;
+                }
+            }
+            
+            @media (min-width:768px) and (max-width:1024px) {
+                .wrapper {
+                    padding-top: 0px!important;
+                    padding-left: 0px;
+                    margin-left: 0px;
+                }
+            }

@@ -1,0 +1,15 @@
+<div class="row " *ngIf="usuario.img">
+    <div class="col-md-12 contenedor ">
+        <div class="sidebar-box informacionPersonal">
+            <div class="bio text-center">
+                <img *ngIf="usuario.img" src="{{url_firebase}}{{usuario.img}}{{url_firebase2}}" alt="Imagen Admin" class="img-fluid">
+                <div class="bio-body">
+                    <h2>Eva Ortiz</h2>
+                    <p>{{usuario.descripcion}}</p>
+                    <p><a [routerLink]="[ '/bio'] " class="thumbnail ">Leer mi bio</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

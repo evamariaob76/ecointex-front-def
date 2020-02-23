@@ -1,0 +1,70 @@
+<div class="row principal" *ngIf="authService.isAuthenticated()==true">
+    <a id="administrador"></a>
+
+    <div class=" col-lg-12 col-sm-12 col-12 text-center col">
+        <div class="  contenedor text-center">
+
+            <h2>Bienvenido: <span>{{authService.usuario.username}}</span></h2>
+            <h2> <small>¿Que quieres hacer?</small></h2>
+
+            <hr>
+            <div class="row">
+                <div class="col-lg-3 col-sm-3  col-12 text-center col col-xs-12">
+                    <button type="button" class="btn btn-rounded boton center-block" [routerLink]="['/clientes/page/0']"> Editar / Eliminar suscriptores</button></div>
+                <div class="col-lg-3 col-sm-3 col-12 text-center col col-xs-12">
+                    <button type="button" class="btn btn-rounded boton center-block" [routerLink]="['/comercios/page/0']">  Editar / Eliminar comercios</button></div>
+                <div class="col-lg-3 col-sm-3 col-12 text-center col col-xs-12">
+                    <button type="button" class="btn btn-rounded boton center-block" [routerLink]="['/crear/comercios']"> Crear Comercio Nuevo</button></div>
+                <div class="col-lg-3 col-sm-3  col-12 text-center col col-xs-12">
+                    <button type="button" class="btn btn-rounded boton center-block" [routerLink]="['/uploadAmin']"> Editar /Eliminar Datos Blog</button></div>
+
+                <div class="row ">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-12 text-center col">
+                        <button type="button" class="btn btn-rounded boton" (click)="cerrarSesion();"> Cerrar sesion Admin</button></div>
+
+                </div>
+
+            </div>
+            <div class="barras">
+                <div class="row ">
+                    <div class="col-lg-12 .col-sm-12 col-md-12 col-12 text-center col">
+                        <div class="graficoBarra">
+                            <div>
+                                <canvas id="myChart" baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row " style="padding: 0px">
+                    <div class="col-lg-6 .col-sm-6 .col-md-6 .col-6 text-center col">
+                        <div class="graficoBarra">
+                            <div>
+                                <canvas id="myChart2" baseChart [datasets]="barChartData2" [labels]="barChartLabels2" [options]="barChartOptions2" [plugins]="barChartPlugins2" [legend]="barChartLegend2" [chartType]="barChartType2">
+                                        </canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 .col-sm-6 .col-md-6 .col-6 text-center col">
+                        <div class="graficoBarra">
+                            <div>
+                                <canvas id="myChart3" baseChart [datasets]="barChartData3" [labels]="barChartLabels3" [options]="barChartOptions3" [plugins]="barChartPlugins3" [legend]="barChartLegend3" [chartType]="barChartType3">
+                                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="padding-top: 30px">
+                <div class="col-lg-12 .col-sm-12 .col-md-12 .col-12 text-center col">
+
+                    <div class="chart">
+                        <canvas baseChart width="500" height="500" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
