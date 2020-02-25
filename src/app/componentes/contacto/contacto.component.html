@@ -2,10 +2,10 @@
     <h2>Deja tus datos</h2>
 
     <div class="form-group row">
-        <label class="col-sm-3 col-lg-2  col-md-3 col-xs-3 col-3 col-form-label" for="nombre">Nombre </label>
-        <div class="col-sm-8 col-lg-9 col-sm-8 col-md-8 col-xs-8 col-8">
+        <label class="col-lg-2 col-sm-2 col-md-2 col-xs-2 col-2 col-form-label" for="nombre">Nombre </label>
+        <div class="col-sm-9">
 
-            <input type="text" class="form-control form-control-sm " style="padding-top: 10%" #nombre="ngModel" id="nombre" [(ngModel)]="Email.nombre" name="nombre" required minlength="3vb">
+            <input type="text" class="form-control form-control-sm " #nombre="ngModel" id="nombre" [(ngModel)]="Email.nombre" name="nombre" required minlength="3">
             <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
                 <div *ngIf="nombre.errors.required ">
                     campo requerido
