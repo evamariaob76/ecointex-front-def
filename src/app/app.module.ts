@@ -58,7 +58,6 @@ import { CrearComercioComponent } from './componentes/crear-comercio/crear-comer
 import { AdminComponent } from './componentes/admin/admin.component';
 import { ComercioFechasComponent } from './componentes/comercio-fechas/comercio-fechas.component';
 import { InformacionPersonalComponent } from './componentes/informacion-personal/informacion-personal.component';
-import { BioComponent } from './componentes/bio/bio.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { EditarComercioComponent } from './componentes/editar-comercio/editar-comercio.component';
 import { UploadAdminComponent } from './componentes/upload-admin/upload-admin.component';
@@ -70,6 +69,7 @@ import { RecuperarPasswordComponent } from './componentes/recuperar-password/rec
 import { ResetPasswordComponent } from './componentes/reset-password/reset-password.component';
 import { BodyComercioCreadoComponent } from './componentes/body-comercio-creado/body-comercio-creado.component';
 import { BodyUpdatedAdminComponent } from './componentes/body-updated-admin/body-updated-admin.component';
+import { PoliticaPrivacidadComponent } from './componentes/politica-privacidad/politica-privacidad.component';
 
 
    // firebase.initializeApp(environment); //<-- where the magic happens
@@ -102,7 +102,6 @@ import { BodyUpdatedAdminComponent } from './componentes/body-updated-admin/body
     AdminComponent,
     ComercioFechasComponent,
     InformacionPersonalComponent,
-    BioComponent,
     ContactoComponent,
     EditarComercioComponent,
     TruncatePipe,
@@ -114,7 +113,8 @@ import { BodyUpdatedAdminComponent } from './componentes/body-updated-admin/body
     RecuperarPasswordComponent,
     ResetPasswordComponent,
     BodyComercioCreadoComponent,
-    BodyUpdatedAdminComponent
+    BodyUpdatedAdminComponent,
+    PoliticaPrivacidadComponent
   ],
   imports: [
     BrowserModule,

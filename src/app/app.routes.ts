@@ -10,7 +10,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { BodyComercioComponent } from './componentes/body-comercio/body-comercio.component';
 import { GetComentariosComponent } from './componentes/get-comentarios/get-comentarios.component';
 import { CrearComercioComponent } from './componentes/crear-comercio/crear-comercio.component';
-import { BioComponent } from './componentes/bio/bio.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { EditarComercioComponent } from './componentes/editar-comercio/editar-comercio.component';
 import { RolesGuard } from './guards/roles.guard';
@@ -22,6 +21,7 @@ import { RecuperarPasswordComponent } from './componentes/recuperar-password/rec
 import { ResetPasswordComponent } from './componentes/reset-password/reset-password.component';
 import { BodyComercioCreadoComponent } from './componentes/body-comercio-creado/body-comercio-creado.component';
 import { BodyUpdatedAdminComponent } from './componentes/body-updated-admin/body-updated-admin.component';
+import { PoliticaPrivacidadComponent } from './componentes/politica-privacidad/politica-privacidad.component';
 
 
 const RUTAS: Routes = [
@@ -41,12 +41,12 @@ const RUTAS: Routes = [
     { path: 'crear/comercios', component: CrearComercioComponent, canActivate: [AuthGuard, RolesGuard], data: { role: 'ROLE_ADMIN' }  },
     { path: 'admin', component: BodyAdminComponent },
     { path: 'mes/:mes', component: BodyFechasComponent },
-    { path: 'bio', component: BioComponent },
     { path: 'home/resetPasword', component: ResetPasswordComponent },
     { path: 'password', component: RecuperarPasswordComponent },
     { path: 'contacto/form', component: ContactoComponent },
     { path: 'editar/:id', component: EditarComercioComponent, canActivate: [AuthGuard, RolesGuard], data: { role: 'ROLE_ADMIN' } },
     { path: 'uploadAmin', component: BodyUpdatedAdminComponent, canActivate: [AuthGuard, RolesGuard], data: { role: 'ROLE_ADMIN' }  },
+    { path: 'politica', component: PoliticaPrivacidadComponent },
 
 
     { path: '**', pathMatch: 'full', redirectTo: 'home' }

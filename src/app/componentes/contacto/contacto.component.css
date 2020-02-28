@@ -102,6 +102,14 @@
            color: rgba(41, 64, 29);
        }
        
+       .privacidad {
+           font-size: 11px;
+       }
+       
+       .form-check {
+           margin-left: 10%;
+       }
+       
        @media (max-width:700px) {
            .alert {
                font-size: 10px;
@@ -115,6 +123,9 @@
            p,
            input {
                font-size: 10px!important;
+           }
+           .privacidad {
+               font-size: 9px;
            }
        }
        
@@ -131,5 +142,8 @@
            }
            form {
                margin-bottom: 100px;
+           }
+           .privacidad {
+               font-size: 10px;
            }
        }

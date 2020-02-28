@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { PoliticaPrivacidadComponent } from '../politica-privacidad/politica-privacidad.component';
 
 
 @Component({

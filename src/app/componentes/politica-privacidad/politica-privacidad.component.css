@@ -1,0 +1,36 @@
+.modal-title {
+    color: rgba(41, 64, 29);
+}
+
+.modal-header {
+    text-align: center;
+}
+
+li {
+    font-weight: bold;
+}
+
+span,
+p,
+#none {
+    font-weight: normal!important;
+}
+
+#actualizacion {
+    font-weight: bold!important;
+}
+
+.modal-body {
+    font-size: 12px;
+}
+
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    text-align: justify;
+}
+
+ol {
+    padding-left: 5%;
+    padding-right: 3%;
+}
