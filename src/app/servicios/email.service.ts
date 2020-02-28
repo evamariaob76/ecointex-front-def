@@ -74,6 +74,7 @@ export class EmailService {
   username: string;
   telefono: string;
   empresa: string;
+  politica:boolean;
 
 };
 

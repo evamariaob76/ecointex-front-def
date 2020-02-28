@@ -11,6 +11,7 @@ export class ContactoComponent implements OnInit {
 email : string;
 nombre : string;
 Email : Email= new Email;
+politica: boolean;
 enviado:boolean = false;
   constructor( private emailService : EmailService) { }
 
