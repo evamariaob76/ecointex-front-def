@@ -2,8 +2,8 @@
     <h2>Deja tus datos</h2>
 
     <div class="form-group row">
-        <label class="col-lg-2 col-sm-2 col-md-2 col-xs-2 col-2 col-form-label" for="nombre">Nombre </label>
-        <div class="col-sm-9">
+        <label class="col-lg-2 col-sm-2 col-md-2 col-xs-1 col-2 col-form-label" for="nombre">Nombre </label>
+        <div class="col-sm-9 col-xs-5 ">
 
             <input type="text" class="form-control form-control-sm " #nombre="ngModel" id="nombre" [(ngModel)]="Email.nombre" name="nombre" required minlength="3">
             <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
@@ -21,7 +21,7 @@
 
     <div class="form-group row">
         <label class="col-lg-2 col-sm-2 col-md-2 col-xs-2 col-2 col-form-label" for="email">Email</label>
-        <div class="col-sm-9">
+        <div class="col-sm-9 ">
             <input type="email" class="form-control form-control-sm" id="colFormLabelSm" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" type="email" id="email" #email="ngModel" [(ngModel)]="Email.email" required name="email">
             <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
                 <div *ngIf="email.errors.required ">
@@ -76,7 +76,8 @@
 
             <div class="form-check ">
                 <input type="checkbox" required class="form-check-input" id="exampleCheck1" #politica="ngModel" [(ngModel)]="Email.politica" name="politica">
-                <label style="padding-bottom: 2%;vertical-align: middle;" class="form-check-label privacidad" for="exampleCheck1">He leído y acepto la Política de Privacidad</label>
+                <label style="padding-bottom: 2%;vertical-align: middle" class="form-check-label privacidad" for="exampleCheck1">He leído y acepto la <button data-toggle="modal" data-target="#exampleModal" >política de privacidad</button></label>
+
             </div>
         </div>
     </div>

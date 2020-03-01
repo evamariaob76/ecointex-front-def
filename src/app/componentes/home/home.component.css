@@ -1,120 +1,215 @@
-    nav {
-        height: 100%;
-        width: 100%;
-    }
-    
-    .shadow {
-        padding: 20px;
-    }
-    
-    ul {
-        list-style: none;
-        text-align: left;
-        font-family: 'Dosis', sans-serif;
-    }
-    
-    ul li:before {
-        content: '✓  ';
-        color: rgba(41, 64, 29);
-        font-weight: bold;
-    }
-    
-    li {
-        padding-top: 50px;
-        font-size: 1.2em;
-        font-weight: bolder;
-    }
-    
-    .comentario {
-        text-align: justify;
-        padding-bottom: 3%;
-        padding-top: 3%;
-    }
-    
-    .abajo {
-        margin-bottom: 100px;
-    }
-    
-    .formulario {
-        padding-top: 100px;
-    }
-    
-    h4 {
-        padding-top: 30px;
-        font-family: 'Dosis', sans-serif;
-    }
-    
-    h3 {
-        margin-bottom: 50px!important;
-    }
-    
-    h1,
-    p {
-        text-align: center;
-    }
-    
-    h2,
-    h3 {
-        font-family: 'Sriracha', cursive;
-        text-align: center;
-    }
-    
-    h2 {
-        padding-top: 1%;
-    }
-    
-    .col-md-4 {
-        width: 50%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .pie {
-        position: fixed;
-        bottom: 0px;
-    }
-    
-    .contenidoCuerpo {
-        /*  height: 60vh;*/
-        max-height: max-content;
-    }
-    
-    .contacto {
-        margin-top: 30vh;
-    }
-    
-    @media (max-width:1400px) {
-        ul {
-            font-size: 0.8em;
-        }
-        h2 {
-            font-size: 1.5em;
-        }
-        h4 {
-            font-size: 1.1em;
-        }
-        .contacto {
-            margin-left: 0px !important;
-            width: 500px!important;
-        }
-        .col-xl-2 {
-            padding: 0px;
-            margin-left: 2%!important;
-        }
-        h4 {
-            padding-top: 0px!important;
-        }
-        li {
-            padding-top: 3%;
-        }
-        .contacto {
-            margin-top: 8%!important;
-        }
-    }
-    
-    @media (max-width:1140px) {
-        .contenido {
-            padding-bottom: 50px;
-        }
-    }
+            nav {
+                height: 100%;
+                width: 100%;
+            }
+            
+            .shadow {
+                padding: 20px;
+            }
+            
+            ul {
+                list-style: none;
+                text-align: left;
+                font-family: 'Dosis', sans-serif;
+            }
+            
+            ul li:before {
+                content: '✓  ';
+                color: rgba(41, 64, 29);
+                font-weight: bold;
+            }
+            
+            li {
+                padding-top: 50px;
+                font-size: 1.2em;
+                font-weight: bolder;
+            }
+            
+            .comentario {
+                text-align: justify;
+                padding-bottom: 3%;
+                padding-top: 3%;
+            }
+            
+            .abajo {
+                margin-bottom: 100px;
+            }
+            
+            .formulario {
+                padding-top: 100px;
+            }
+            
+            h4 {
+                padding-top: 30px;
+                font-family: 'Dosis', sans-serif;
+            }
+            
+            h3 {
+                margin-bottom: 50px!important;
+            }
+            
+            h1,
+            p {
+                text-align: center;
+            }
+            
+            h2,
+            h3 {
+                font-family: 'Sriracha', cursive;
+                text-align: center;
+            }
+            
+            h2 {
+                padding-top: 1%;
+            }
+            
+            .col-md-4 {
+                width: 50%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .pie {
+                position: fixed;
+                bottom: 0px;
+            }
+            
+            .contenidoCuerpo {
+                /*  height: 60vh;*/
+                /* style="border:1px solid red"*/
+            }
+            
+            .contacto {
+                margin-top: 20vh;
+            }
+            
+            @media (max-width:1400px) {
+                ul {
+                    font-size: 0.8em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h4 {
+                    font-size: 1.1em;
+                }
+                .contacto {
+                    margin-left: 0px !important;
+                }
+                .col-xl-2 {
+                    padding: 0px;
+                    margin-left: 2%!important;
+                }
+                h4 {
+                    padding-top: 0px!important;
+                }
+                li {
+                    padding-top: 3%;
+                }
+                .contacto {
+                    margin-top: 8%!important;
+                }
+            }
+            
+            @media (max-width:1140px) {
+                .contenido {
+                    padding-bottom: 50px;
+                }
+            }
+            
+            @media (width:411px) {
+                .contacto {
+                    margin-left: 100px!important;
+                }
+                img {
+                    height: 40px!important;
+                }
+                .contenido {
+                    padding-top: 10px;
+                    padding-bottom: 0px;
+                }
+            }
+            
+            @media (width:360px) {
+                .contacto {
+                    margin-left: 75px!important;
+                }
+                img {
+                    height: 40px!important;
+                }
+                .contenido {
+                    font-size: 14px;
+                    padding-top: 10px;
+                    padding-bottom: 0px;
+                }
+                .contenido {
+                    font-size: 14px;
+                    padding-top: 10px;
+                    padding-bottom: 0px;
+                }
+            }
+            
+            @media (width:320px) {
+                .contacto {
+                    margin-left: 50px!important;
+                }
+                img {
+                    height: 30px!important;
+                }
+                .contenido {
+                    font-size: 14px;
+                    padding-top: 10px;
+                    padding-bottom: 0px;
+                }
+            }
+            
+            @media (width:375px) {
+                .contacto {
+                    margin-left: 80px!important;
+                }
+                img {
+                    height: 40px!important;
+                }
+                .contenido {
+                    padding-top: 20px;
+                    padding-bottom: 0px;
+                }
+            }
+            
+            @media (width:414px) {
+                .contacto {
+                    margin-left: 100px!important;
+                }
+                img {
+                    height: 40px!important;
+                }
+                .contenido {
+                    padding-top: 20px;
+                    padding-bottom: 0px;
+                }
+            }
+            
+            @media (width:1024px) {
+                .contacto {
+                    margin-left: 100px!important;
+                }
+                ul li {
+                    font-size: 20px;
+                }
+                li {
+                    padding-bottom: 50px;
+                }
+                .border-0 {
+                    padding-top: 30px;
+                }
+            }
+            
+            @media (max-width:1366px) {
+                .contacto {
+                    margin-top: 5vh!important;
+                }
+                .contenido {
+                    padding-bottom: 80px;
+                }
+            }
