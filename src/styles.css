@@ -18,8 +18,4 @@
         height: 100%;
     }
     
-    @media (max-width:414px) {
-        html {
-            height: unset!important;
-        }
-    }
+    @media (max-width:968px) {}
